@@ -1,0 +1,89 @@
+"Vous êtes chargé de concevoir une application de chat offline pour une école, développée avec Angular (version 14 ou supérieure). L’application doit fonctionner sur le réseau local de l’école, sans dépendance à une connexion internet, et être déployée sous forme de Progressive Web App (PWA) pour garantir une compatibilité multi-plateforme (desktop et mobile). Le bleu (#1E88E5) est la couleur principale, avec des nuances spécifiques appliquées aux différentes parties de l’interface utilisateur.
+L’application doit inclure les fonctionnalités suivantes : messagerie texte, partage de fichiers, appels vocaux, gestion de groupes (salons thématiques), et notifications en temps réel. Elle doit être intuitive pour les utilisateurs (élèves, professeurs, personnel), sécurisée, et capable de conserver les données localement pour une utilisation hors ligne.
+Exigences globales
+Framework : Angular, avec une architecture modulaire.
+PWA : Utilisation de service workers pour la gestion hors ligne.
+Couleur principale : Bleu (#1E88E5) pour les éléments clés (boutons, en-têtes, icônes).
+Responsive : Compatible avec desktop, tablettes et smartphones.
+Sécurité : Authentification des utilisateurs et chiffrement des messages.
+Persistance : Stockage local des données avec IndexedDB.
+Structure de l’application
+L’application doit être organisée en modules Angular distincts pour chaque fonctionnalité, avec une attention particulière à l’utilisation du bleu dans l’interface.
+Module d’authentification
+Fonctionnalité : Connexion et inscription des utilisateurs.
+Interface : 
+Page de connexion avec champs pour identifiant et mot de passe.
+Bouton de soumission en bleu (#1E88E5).
+En-tête de la page avec fond bleu (#1E88E5) et texte blanc.
+Technique : Intégration avec un service d’authentification back-end (ex. : JWT).
+Module de messagerie
+Fonctionnalité : Envoi et réception de messages privés ou en groupe.
+Interface :
+Liste des conversations avec aperçu du dernier message.
+Zone de conversation : bulles de messages en bleu clair (#BBDEFB) pour l’utilisateur, gris clair (#F5F6F5) pour les autres.
+Champ de saisie avec bouton d’envoi en bleu (#1E88E5).
+Technique : Chargement lazy des messages, support du markdown léger.
+Module de groupes (salons thématiques)
+Fonctionnalité : Création et gestion de salons par thème (matières, projets, etc.).
+Interface :
+Liste des salons avec nom et nombre de membres.
+Bouton de création de salon en bleu (#1E88E5).
+Page de salon avec en-tête bleu (#1E88E5) et liste des membres.
+Technique : Options pour ajouter/supprimer des membres (réservé aux administrateurs).
+Module d’appels vocaux
+Fonctionnalité : Appels vocaux en pair-à-pair.
+Interface :
+Bouton d’appel (icône téléphone) en bleu (#1E88E5) dans les conversations privées.
+Écran d’appel avec boutons muet (bleu #1E88E5) et raccrocher (rouge #EF5350).
+Technique : Intégration de WebRTC pour les flux audio.
+Module de partage de fichiers
+Fonctionnalité : Téléversement et partage de fichiers (PDF, images, etc.).
+Interface :
+Bouton de téléversement (icône trombone) en bleu (#1E88E5).
+Prévisualisation des fichiers dans la conversation.
+Technique : Limite de taille (ex. : 10 Mo), stockage temporaire local.
+Module de notifications
+Fonctionnalité : Alertes pour nouveaux messages ou appels.
+Interface :
+Icône de notification (cloche) en bleu (#1E88E5) dans la barre de navigation.
+Pop-up de notification avec fond bleu clair (#BBDEFB).
+Technique : Notifications push locales via service workers.
+Module de recherche
+Fonctionnalité : Recherche d’utilisateurs ou de messages.
+Interface :
+Barre de recherche avec icône loupe en bleu (#1E88E5).
+Résultats surlignés en bleu clair (#BBDEFB).
+Technique : Recherche full-text dans les messages.
+Palette de couleurs
+Bleu principal (#1E88E5) : Boutons d’action, en-têtes, icônes.
+Bleu clair (#BBDEFB) : Bulles de messages de l’utilisateur, fonds secondaires.
+Vert lime (#76FF03) : Indicateurs de statut en ligne.
+Gris clair (#F5F6F5) : Fonds généraux, bulles des autres utilisateurs.
+Rouge (#EF5350) : Erreurs, bouton raccrocher.
+Typographie
+Police : Roboto (Google Fonts).
+Tailles :
+Titres : 18px, gras.
+Messages : 14px, regular.
+Métadonnées : 12px, italic.
+Fonctionnalités détaillées
+Authentification : Validation des champs, redirection après connexion.
+Messagerie : Indicateur de saisie ("X est en train d’écrire...").
+Groupes : Gestion des membres par les administrateurs.
+Appels vocaux : Gestion des permissions microphone.
+Partage de fichiers : Indicateur de progression pour le téléversement.
+Notifications : Option pour désactiver dans les paramètres.
+Recherche : Filtrage par utilisateur ou salon.
+Gestion hors ligne
+Stockage des messages et fichiers dans IndexedDB.
+Synchronisation automatique des données en attente.
+Icône de statut hors ligne (nuage barré) en bleu (#1E88E5).
+Sécurité
+Chiffrement des messages privés avec TweetNaCl.js.
+Authentification via JWT.
+Performances
+Lazy loading des modules.
+Utilisation de RxJS pour les flux asynchrones.
+Tests
+Tests unitaires avec Jasmine/Karma.
+Tests e2e avec Protractor.
